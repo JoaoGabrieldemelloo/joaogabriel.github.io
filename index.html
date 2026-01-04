@@ -1,332 +1,258 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>João Gabriel | Dev & TI</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>João Gabriel | Analista de TI</title>
 
-<meta name="description" content="João Gabriel de Mello | Service Desk Jr, ADS, TI, suporte técnico e tecnologia">
-<meta name="author" content="João Gabriel de Mello">
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050b18;
+      --card: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.12);
+      --primary: #38bdf8;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+    }
 
-<style>
-:root {
-  --bg: #020617;
-  --card: rgba(15, 23, 42, 0.75);
-  --border: rgba(148, 163, 184, 0.15);
-  --text: #e5e7eb;
-  --muted: #94a3b8;
-  --accent: #38bdf8;
-  --accent2: #6366f1;
-}
+    * { box-sizing: border-box; }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #0f172a, var(--bg));
+      color: var(--text);
+      overflow-x: hidden;
+    }
 
-html { scroll-behavior: smooth; }
+    /* Animated background */
+    .bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+    }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  overflow-x: hidden;
-}
+    .bg span {
+      position: absolute;
+      display: block;
+      width: 2px;
+      height: 120px;
+      background: linear-gradient(transparent, var(--primary));
+      animation: rain 8s linear infinite;
+      opacity: .25;
+    }
 
-/* PARTICLES */
-canvas {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-}
+    @keyframes rain {
+      0% { transform: translateY(-150px); }
+      100% { transform: translateY(110vh); }
+    }
 
-/* GLOBAL */
-section {
-  max-width: 1100px;
-  margin: auto;
-  padding: 100px 20px;
-}
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
 
-h3 {
-  text-align: center;
-  font-size: 2.4rem;
-  margin-bottom: 60px;
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-  -webkit-background-clip: text;
-  color: transparent;
-}
+    header h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 1rem;
+    }
 
-/* HERO */
-header {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+    header h1 span { color: var(--primary); }
 
-.hero {
-  max-width: 900px;
-  animation: fadeUp 1.2s ease;
-}
+    header p {
+      max-width: 650px;
+      margin: 0 auto 2rem;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
 
-.badge {
-  display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
-  padding: 6px 16px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  color: var(--accent);
-  margin-bottom: 20px;
-}
+    .btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-.hero h1 {
-  font-size: 3.4rem;
-}
+    .btn {
+      padding: .9rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      cursor: pointer;
+      transition: .3s;
+      text-decoration: none;
+    }
 
-.hero h1 span {
-  font-family: 'JetBrains Mono', monospace;
-  color: var(--accent);
-}
+    .btn.primary {
+      background: var(--primary);
+      color: #020617;
+      border: none;
+    }
 
-.hero h2 {
-  font-weight: 400;
-  color: var(--muted);
-  margin: 15px 0;
-}
+    .btn:hover { transform: translateY(-3px); }
 
-.hero p {
-  max-width: 650px;
-  margin: auto;
-  color: var(--muted);
-}
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 5rem 1.5rem;
+    }
 
-.buttons {
-  margin-top: 40px;
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+    section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
 
-.btn {
-  padding: 14px 28px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  color: #020617;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.3s;
-}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
 
-.btn.secondary {
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--text);
-}
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.8rem;
+      backdrop-filter: blur(12px);
+      transition: .4s;
+    }
 
-.btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 25px rgba(56,189,248,0.4);
-}
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--primary);
+    }
 
-/* CARDS */
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 32px;
-  backdrop-filter: blur(12px);
-  transition: 0.4s;
-}
+    .card h3 { margin-top: 0; }
 
-.card:hover {
-  transform: translateY(-8px) scale(1.01);
-  border-color: var(--accent);
-  box-shadow: 0 0 40px rgba(56,189,248,0.25);
-}
+    .tag {
+      display: inline-block;
+      margin-bottom: .6rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
 
-/* ABOUT */
-.about {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-}
+    ul { padding-left: 1.2rem; }
 
-/* EXPERIENCE */
-.timeline {
-  display: grid;
-  gap: 30px;
-}
+    ul li {
+      margin-bottom: .5rem;
+      color: var(--muted);
+    }
 
-.timeline strong {
-  color: var(--accent);
-}
-
-.timeline p {
-  color: var(--muted);
-  margin: 6px 0 14px;
-}
-
-.timeline ul {
-  padding-left: 20px;
-  line-height: 1.8;
-}
-
-/* SKILLS */
-.skills {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-}
-
-.skills .card {
-  text-align: center;
-  font-family: 'JetBrains Mono', monospace;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 40px;
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-}
-
-/* ANIMATIONS */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 768px) {
-  .hero h1 { font-size: 2.5rem; }
-  .about { grid-template-columns: 1fr; }
-}
-</style>
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+  </style>
 </head>
-
 <body>
 
-<canvas id="particles"></canvas>
+  <!-- Animated background -->
+  <div class="bg" id="bg"></div>
 
-<header>
-  <div class="hero">
-    <div class="badge">Service Desk • TI • ADS</div>
-    <h1>João Gabriel <span>{ Dev & TI }</span></h1>
-    <h2>Assistente de Service Desk Jr • Estudante de ADS</h2>
-    <p>Profissional de TI com foco em suporte técnico, gestão de chamados, hardware e sistemas corporativos.</p>
-
-    <div class="buttons">
-      <a class="btn" href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-      <a class="btn secondary" href="/curriculo-joao-gabriel.pdf">Download CV</a>
-      <a class="btn secondary" href="https://wa.me/5511941753565">WhatsApp</a>
+  <header>
+    <div>
+      <h1>João Gabriel <span>de Mello</span></h1>
+      <p>Analista de TI Jr | Service Desk | Suporte Técnico | Estudante de ADS</p>
+      <div class="btns">
+        <a class="btn primary" href="Curriculo João Gabriel de Mello.pdf" target="_blank">📄 Currículo</a>
+        <a class="btn" href="mailto:joaogabrieldemelloo@hotmail.com">✉️ Contato</a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<section>
-<h3>Sobre mim</h3>
-<div class="about">
-  <div class="card">
-    Atuo na área de Suporte e Service Desk, com experiência em ambientes corporativos e atendimento ao usuário.
-  </div>
-  <div class="card">
-    Busco crescimento técnico na área de TI, unindo suporte, desenvolvimento e boas práticas.
-  </div>
-</div>
-</section>
+  <section>
+    <h2>Experiência Profissional</h2>
+    <div class="grid">
 
-<section>
-<h3>Experiência</h3>
-<div class="timeline">
-  <div class="card">
-    <strong>iFood</strong>
-    <p>Assistente de Service Desk Jr • 2023 – Atual</p>
-    <ul>
-      <li>Atendimento e suporte a usuários internos</li>
-      <li>Gestão de chamados via Jira</li>
-      <li>Atuação conforme SLA e ITIL</li>
-    </ul>
-  </div>
+      <div class="card">
+        <span class="tag">iFood — Atual</span>
+        <h3>Analista de Service Desk Jr</h3>
+        <ul>
+          <li>Atendimento técnico de primeiro nível</li>
+          <li>Registro e acompanhamento de chamados</li>
+          <li>Suporte a sistemas, acessos e usuários internos</li>
+          <li>Atuação com SLAs e boas práticas de ITIL</li>
+        </ul>
+      </div>
 
-  <div class="card">
-    <strong>Unifieo</strong>
-    <p>Suporte de TI • 2022 – 2023</p>
-    <ul>
-      <li>Suporte presencial e remoto</li>
-      <li>Manutenção de hardware e software</li>
-    </ul>
-  </div>
+      <div class="card">
+        <span class="tag">Unifieo</span>
+        <h3>Suporte de TI</h3>
+        <ul>
+          <li>Suporte a professores e alunos</li>
+          <li>Manutenção de hardware</li>
+          <li>Gerenciamento de acessos e senhas</li>
+          <li>Atendimento via e-mail e presencial</li>
+        </ul>
+      </div>
 
-  <div class="card">
-    <strong>Autoglass</strong>
-    <p>TI / Almoxarife • 2021 – 2022</p>
-    <ul>
-      <li>Suporte básico de TI</li>
-      <li>Controle de ativos</li>
-    </ul>
-  </div>
-</div>
-</section>
+      <div class="card">
+        <span class="tag">Autoglass</span>
+        <h3>TI / Almoxarife</h3>
+        <ul>
+          <li>Atendimento via JIRA Service Desk</li>
+          <li>Gestão e controle de ativos de TI</li>
+          <li>Relatórios e auditorias</li>
+          <li>Suporte ao cliente interno</li>
+        </ul>
+      </div>
 
-<section>
-<h3>Skills</h3>
-<div class="skills">
-  <div class="card">🖥️ Suporte Técnico</div>
-  <div class="card">🎫 Jira Service Desk</div>
-  <div class="card">🐍 Python</div>
-  <div class="card">☕ Java POO</div>
-  <div class="card">🔧 Hardware</div>
-  <div class="card">📊 Excel</div>
-</div>
-</section>
+    </div>
+  </section>
 
-<footer>
-© 2025 • João Gabriel • Dev & TI 🚀
-</footer>
+  <section>
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Hard Skills</h3>
+        <ul>
+          <li>Lógica de Programação</li>
+          <li>Excel Intermediário</li>
+          <li>Service Desk & ITIL</li>
+          <li>Hardware e Suporte</li>
+        </ul>
+      </div>
 
-<script>
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-let particles = [];
+      <div class="card">
+        <h3>Soft Skills</h3>
+        <ul>
+          <li>Ownership</li>
+          <li>Trabalho em equipe</li>
+          <li>Comunicação clara</li>
+          <li>Agilidade na resolução de problemas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-function resize() {
-  canvas.width = innerWidth;
-  canvas.height = innerHeight;
-}
-window.addEventListener("resize", resize);
-resize();
+  <footer>
+    © 2026 • João Gabriel de Mello • Portfólio Tech
+  </footer>
 
-for (let i = 0; i < 80; i++) {
-  particles.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 2 + 1,
-    dx: Math.random() * 0.6 - 0.3,
-    dy: Math.random() * 0.6 - 0.3
-  });
-}
-
-function animate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = "#38bdf8";
-
-  particles.forEach(p => {
-    p.x += p.dx;
-    p.y += p.dy;
-
-    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fill();
-  });
-
-  requestAnimationFrame(animate);
-}
-animate();
-</script>
+  <script>
+    // Generate animated background lines
+    const bg = document.getElementById('bg');
+    for (let i = 0; i < 80; i++) {
+      const span = document.createElement('span');
+      span.style.left = Math.random() * 100 + 'vw';
+      span.style.animationDelay = Math.random() * 8 + 's';
+      span.style.animationDuration = 5 + Math.random() * 6 + 's';
+      bg.appendChild(span);
+    }
+  </script>
 
 </body>
 </html>
