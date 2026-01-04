@@ -1,280 +1,332 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>João Gabriel | Dev & TI</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>João Gabriel | Dev & TI</title>
 
-  <!-- SEO -->
-  <meta name="description" content="João Gabriel de Mello | Service Desk Jr, estudante de ADS, profissional de TI com foco em suporte técnico e tecnologia.">
-  <meta name="author" content="João Gabriel de Mello">
+<meta name="description" content="João Gabriel de Mello | Service Desk Jr, ADS, TI, suporte técnico e tecnologia">
+<meta name="author" content="João Gabriel de Mello">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #0a0f1c;
-      --bg-soft: #0f172a;
-      --card: rgba(17, 24, 39, 0.75);
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #38bdf8;
-      --border: rgba(255, 255, 255, 0.08);
-    }
+<style>
+:root {
+  --bg: #020617;
+  --card: rgba(15, 23, 42, 0.75);
+  --border: rgba(148, 163, 184, 0.15);
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent2: #6366f1;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+html { scroll-behavior: smooth; }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top, #0f172a, var(--bg));
-      color: var(--text);
-      line-height: 1.6;
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
 
-    /* HEADER */
-    header {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-    }
+/* PARTICLES */
+canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
 
-    .hero {
-      max-width: 900px;
-      text-align: center;
-      animation: fadeIn 1.2s ease;
-    }
+/* GLOBAL */
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 100px 20px;
+}
 
-    .badge {
-      display: inline-block;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem;
-      color: var(--accent);
-      border: 1px solid var(--border);
-      padding: 6px 14px;
-      border-radius: 999px;
-      margin-bottom: 20px;
-    }
+h3 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 60px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  color: transparent;
+}
 
-    .hero h1 {
-      font-size: 3.2rem;
-      margin-bottom: 10px;
-    }
+/* HERO */
+header {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-    .hero h1 span {
-      color: var(--accent);
-      font-family: 'JetBrains Mono', monospace;
-    }
+.hero {
+  max-width: 900px;
+  animation: fadeUp 1.2s ease;
+}
 
-    .hero h2 {
-      color: var(--muted);
-      font-weight: 400;
-      margin-bottom: 20px;
-    }
+.badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--accent);
+  margin-bottom: 20px;
+}
 
-    .hero p {
-      color: var(--muted);
-      max-width: 650px;
-      margin: 0 auto;
-    }
+.hero h1 {
+  font-size: 3.4rem;
+}
 
-    .buttons {
-      margin-top: 35px;
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+.hero h1 span {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent);
+}
 
-    .btn {
-      padding: 12px 26px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #38bdf8, #2563eb);
-      color: #020617;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s;
-    }
+.hero h2 {
+  font-weight: 400;
+  color: var(--muted);
+  margin: 15px 0;
+}
 
-    .btn.secondary {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
+.hero p {
+  max-width: 650px;
+  margin: auto;
+  color: var(--muted);
+}
 
-    .btn:hover {
-      transform: translateY(-3px);
-      filter: brightness(1.1);
-    }
+.buttons {
+  margin-top: 40px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-    /* SECTIONS */
-    section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 80px 20px;
-    }
+.btn {
+  padding: 14px 28px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #020617;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
 
-    section h3 {
-      text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 50px;
-    }
+.btn.secondary {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
 
-    /* CARDS */
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 30px;
-      backdrop-filter: blur(10px);
-      transition: 0.3s;
-    }
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(56,189,248,0.4);
+}
 
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: var(--accent);
-    }
+/* CARDS */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 32px;
+  backdrop-filter: blur(12px);
+  transition: 0.4s;
+}
 
-    /* ABOUT */
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 40px;
-    }
+.card:hover {
+  transform: translateY(-8px) scale(1.01);
+  border-color: var(--accent);
+  box-shadow: 0 0 40px rgba(56,189,248,0.25);
+}
 
-    .about .card {
-      height: 100%;
-    }
+/* ABOUT */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
 
-    /* EXPERIENCE */
-    .timeline {
-      display: grid;
-      gap: 20px;
-    }
+/* EXPERIENCE */
+.timeline {
+  display: grid;
+  gap: 30px;
+}
 
-    .timeline .card strong {
-      color: var(--accent);
-    }
+.timeline strong {
+  color: var(--accent);
+}
 
-    /* SKILLS */
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
+.timeline p {
+  color: var(--muted);
+  margin: 6px 0 14px;
+}
 
-    .skills .card {
-      text-align: center;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.95rem;
-    }
+.timeline ul {
+  padding-left: 20px;
+  line-height: 1.8;
+}
 
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: var(--muted);
-      font-size: 0.85rem;
-      border-top: 1px solid var(--border);
-    }
+/* SKILLS */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
 
-    /* ANIMATION */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+.skills .card {
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+}
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.4rem;
-      }
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
 
-      .about {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.5rem; }
+  .about { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 
 <body>
+
+<canvas id="particles"></canvas>
 
 <header>
   <div class="hero">
     <div class="badge">Service Desk • TI • ADS</div>
     <h1>João Gabriel <span>{ Dev & TI }</span></h1>
     <h2>Assistente de Service Desk Jr • Estudante de ADS</h2>
-    <p>
-      Profissional de TI com experiência em suporte técnico, gestão de chamados
-      e atendimento ao usuário em ambientes corporativos.
-    </p>
+    <p>Profissional de TI com foco em suporte técnico, gestão de chamados, hardware e sistemas corporativos.</p>
 
     <div class="buttons">
-      <a class="btn" href="https://www.linkedin.com/in/joao-gabriel-de-mello" target="_blank">LinkedIn</a>
-      <a class="btn secondary" href="/curriculo-joao-gabriel.pdf" target="_blank">Download CV</a>
-      <a class="btn secondary" href="https://wa.me/5511941753565" target="_blank">WhatsApp</a>
+      <a class="btn" href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+      <a class="btn secondary" href="/curriculo-joao-gabriel.pdf">Download CV</a>
+      <a class="btn secondary" href="https://wa.me/5511941753565">WhatsApp</a>
     </div>
   </div>
 </header>
 
 <section>
-  <h3>Sobre mim</h3>
-  <div class="about">
-    <div class="card">
-      <strong>Perfil</strong><br><br>
-      Atuo na área de Suporte e Service Desk em ambientes corporativos,
-      com foco em qualidade de atendimento, resolução de incidentes
-      e evolução técnica constante.
-    </div>
-    <div class="card">
-      <strong>Objetivo</strong><br><br>
-      Crescer profissionalmente na área de Tecnologia da Informação,
-      aplicando conhecimentos em suporte, desenvolvimento e sistemas,
-      sempre alinhado às boas práticas de TI.
-    </div>
+<h3>Sobre mim</h3>
+<div class="about">
+  <div class="card">
+    Atuo na área de Suporte e Service Desk, com experiência em ambientes corporativos e atendimento ao usuário.
   </div>
+  <div class="card">
+    Busco crescimento técnico na área de TI, unindo suporte, desenvolvimento e boas práticas.
+  </div>
+</div>
 </section>
 
 <section>
-  <h3>Experiência</h3>
-  <div class="timeline">
-    <div class="card"><strong>iFood</strong><br>Assistente de Service Desk Jr</div>
-    <div class="card"><strong>Unifieo</strong><br>Suporte de TI</div>
-    <div class="card"><strong>Autoglass</strong><br>TI / Almoxarife</div>
+<h3>Experiência</h3>
+<div class="timeline">
+  <div class="card">
+    <strong>iFood</strong>
+    <p>Assistente de Service Desk Jr • 2023 – Atual</p>
+    <ul>
+      <li>Atendimento e suporte a usuários internos</li>
+      <li>Gestão de chamados via Jira</li>
+      <li>Atuação conforme SLA e ITIL</li>
+    </ul>
   </div>
+
+  <div class="card">
+    <strong>Unifieo</strong>
+    <p>Suporte de TI • 2022 – 2023</p>
+    <ul>
+      <li>Suporte presencial e remoto</li>
+      <li>Manutenção de hardware e software</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <strong>Autoglass</strong>
+    <p>TI / Almoxarife • 2021 – 2022</p>
+    <ul>
+      <li>Suporte básico de TI</li>
+      <li>Controle de ativos</li>
+    </ul>
+  </div>
+</div>
 </section>
 
 <section>
-  <h3>Skills</h3>
-  <div class="skills">
-    <div class="card">🖥️ Suporte Técnico</div>
-    <div class="card">🎫 Jira Service Desk</div>
-    <div class="card">🔧 Hardware</div>
-    <div class="card">🐍 Python</div>
-    <div class="card">☕ Java (POO)</div>
-    <div class="card">📊 Excel</div>
-  </div>
+<h3>Skills</h3>
+<div class="skills">
+  <div class="card">🖥️ Suporte Técnico</div>
+  <div class="card">🎫 Jira Service Desk</div>
+  <div class="card">🐍 Python</div>
+  <div class="card">☕ Java POO</div>
+  <div class="card">🔧 Hardware</div>
+  <div class="card">📊 Excel</div>
+</div>
 </section>
 
 <footer>
-  © 2025 • joaogabriel.dev • Feito por João Gabriel 🚀
+© 2025 • João Gabriel • Dev & TI 🚀
 </footer>
+
+<script>
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+let particles = [];
+
+function resize() {
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+}
+window.addEventListener("resize", resize);
+resize();
+
+for (let i = 0; i < 80; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 2 + 1,
+    dx: Math.random() * 0.6 - 0.3,
+    dy: Math.random() * 0.6 - 0.3
+  });
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "#38bdf8";
+
+  particles.forEach(p => {
+    p.x += p.dx;
+    p.y += p.dy;
+
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  requestAnimationFrame(animate);
+}
+animate();
+</script>
 
 </body>
 </html>
