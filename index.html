@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>João Gabriel | Analista de TI</title>
+  <title>João Gabriel | Analista Jr</title>
 
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
     :root {
@@ -29,7 +28,7 @@
       overflow-x: hidden;
     }
 
-    /* Background animation */
+    /* Background */
     .bg {
       position: fixed;
       inset: 0;
@@ -39,7 +38,6 @@
 
     .bg span {
       position: absolute;
-      display: block;
       width: 2px;
       height: 120px;
       background: linear-gradient(transparent, var(--primary));
@@ -67,13 +65,29 @@
       margin-bottom: .8rem;
     }
 
-    header h1 span { color: var(--primary); }
+    header h1 span {
+      color: var(--primary);
+    }
+
+    /* Destaque do cargo */
+    .role {
+      display: inline-block;
+      margin-bottom: 1.2rem;
+      padding: .4rem 1rem;
+      border-radius: 999px;
+      background: rgba(56,189,248,0.15);
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      font-weight: 600;
+      letter-spacing: .3px;
+      box-shadow: 0 0 12px rgba(56,189,248,0.25);
+    }
 
     header p {
       max-width: 650px;
       margin: 0 auto 1.6rem;
       color: var(--muted);
-      font-size: 1.1rem;
+      font-size: 1.05rem;
     }
 
     .btns {
@@ -100,18 +114,20 @@
       border: none;
     }
 
-    .btn:hover { transform: translateY(-3px); }
+    .btn:hover {
+      transform: translateY(-3px);
+    }
 
     /* Sections */
     section {
       max-width: 1100px;
       margin: auto;
-      padding: 2.5rem 1.5rem; /* ainda menor */
+      padding: 2.5rem 1.5rem;
     }
 
     section h2 {
       font-size: 2.2rem;
-      margin-bottom: .6rem; /* espaço mínimo */
+      margin-bottom: .6rem;
       text-align: center;
     }
 
@@ -119,7 +135,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.2rem;
-      margin-top: 0; /* remove espaço extra */
+      margin-top: 0;
     }
 
     .card {
@@ -136,15 +152,15 @@
       border-color: var(--primary);
     }
 
-    .card h3 {
-      margin: .3rem 0 .7rem;
-    }
-
     .tag {
       display: inline-block;
       margin-bottom: .3rem;
       color: var(--primary);
       font-weight: 600;
+    }
+
+    .card h3 {
+      margin: .3rem 0 .7rem;
     }
 
     ul {
@@ -172,7 +188,12 @@
   <header>
     <div>
       <h1>João Gabriel <span>de Mello</span></h1>
-      <p>Analista de TI Jr | Service Desk | Suporte Técnico | Estudante de ADS</p>
+
+      <!-- Destaque -->
+      <div class="role">Analista Jr</div>
+
+      <p>Service Desk | Suporte Técnico | Estudante de ADS</p>
+
       <div class="btns">
         <a class="btn primary" href="curriculo.html">📄 Currículo</a>
         <a class="btn" href="https://www.linkedin.com/in/joao-gabriel-de-mello" target="_blank">💼 LinkedIn</a>
@@ -187,7 +208,7 @@
 
       <div class="card">
         <span class="tag">iFood — Atual</span>
-        <h3>Analista de Service Desk Jr</h3>
+        <h3>Analista Jr</h3>
         <ul>
           <li>Atendimento técnico de primeiro nível</li>
           <li>Registro e acompanhamento de chamados</li>
