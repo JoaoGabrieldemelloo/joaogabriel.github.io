@@ -106,26 +106,27 @@
     section {
       max-width: 1100px;
       margin: auto;
-      padding: 3rem 1.5rem; /* reduzido */
+      padding: 2.5rem 1.5rem; /* ainda menor */
     }
 
     section h2 {
       font-size: 2.2rem;
-      margin-bottom: 1.5rem; /* reduzido */
+      margin-bottom: .6rem; /* espaço mínimo */
       text-align: center;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.2rem; /* reduzido */
+      gap: 1.2rem;
+      margin-top: 0; /* remove espaço extra */
     }
 
     .card {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 20px;
-      padding: 1.4rem; /* reduzido */
+      padding: 1.4rem;
       backdrop-filter: blur(12px);
       transition: .4s;
     }
@@ -136,13 +137,12 @@
     }
 
     .card h3 {
-      margin-top: .2rem;
-      margin-bottom: .8rem;
+      margin: .3rem 0 .7rem;
     }
 
     .tag {
       display: inline-block;
-      margin-bottom: .4rem;
+      margin-bottom: .3rem;
       color: var(--primary);
       font-weight: 600;
     }
@@ -153,7 +153,7 @@
     }
 
     ul li {
-      margin-bottom: .4rem;
+      margin-bottom: .35rem;
       color: var(--muted);
     }
 
